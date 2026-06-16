@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ORVA Studio</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAD50lEQVR4nO2WX2hbZRjGn++c5Jz+W7auykDXmy1GqDCEVlovhiikaZXBtJyIoDcbZFcqjC03pf1yKDIZ3oQJskjitHcn2Elat0wvJoIXQqKs+IeNdr0oVoQ1yUliXHtOz+tFe7o0f7Y0be/6XB7O+/2e7znveb8P2Ne+HiNF0cRAIOUEiDVTrymKmAoEnAC2X885Cc1AbRHnzdfb8NELfwx+NPp3CGQn0FgSNvzX06ODC8pEiDYSoBpJVD1QFE2MxxVrLLgwKDvkRHtHl5TLLU27DMfbeVf3iqqCAEb14JqiiEpcs35/M+RrcTgSh1vanEslfVr6t0t5rj9jQFWJAZv1VTF1dh4TAEYg62R7e5eUzS1axGgo/8u80cjue9AjMjAC6KWDUovzr5JOjOFUBhmZqapV+X6VgUik1+SchJJVvJTTl6ZlqaPIiIpW/7OvqiqzAoG0ox6cgwsvxGECADH0ZlZLuiyKGZj0+kBSzWuKIpbvHqjbncTsmMOcXA/+m3uZgcUJbGTi8vHvA4GUMxLp25IIBxdCABhUa/atsVvEmGGZ7N2VlYw1kLySf2J0tU080lhw3jsenCuMBee9ALD+ez6CE9Ybb3ZkPDk7Mp7cstJO/giAmA2rNME5OTivDacNU7U6vynVM2GvXwnnaGzX23Jnf/ux4LyXEU0RE/2vDf9w++nwwjeWQOzE1ISPNnpBRXXH74rsJNTgfd+X0Z9+vDk9df3nD8OTxCEQEWt0582LQ7An5dTNr69/OzPzZyKVOA0Av2lc2mM4F7DR0c9EL3w3OHn5qzszU+/8EzuxmPv8+BAApK72Oh+/yC7Au6MXk93Ri0koEAFAv3ZsOBvz5HMxt3dvTNSCAyAiZseei7m9mZinsLsmNEXs0bhUC15uyoZVmrh3wy3T7Vcczc2CiunV/UVtuK1yE9mYJ78c9Qw3gqntjHMBqmodjZz3OVxtA2ul1RdBlrR49pM3NsE1TrbU1V5n37m0kYs977OAzxisSVEUVg+03v2Y+bFGBMbY1sOo6mRTNEWM+1XraOy8j0lyAk6nRFh5eMTMuxYBIASA1R4yfefSxr2wWz505u6tTNRz7dARWcUqIad7+umGpSA0ZxAB5Saqhsb9bKeA9cvLSfFAm7SmFy0Apv5Qbl2/Gal1LyMAkG85aBGHIIhkYJWQ1U1iYKeWlyEzFU++D6QDEROcC8YyLpnLhQRrlYpEzD/3wZUC4n4BFRFWqjeQNgHAMIVPdd2Y7mgVCmuEoafem8trGsTKT1BPm71xOPy+q5GCcpV3/YOwe9v1VSZA25/v5SaIqpPezko7Os9ph/X72nP9D/NK6Wm1sjLdAAAAAElFTkSuQmCC">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --black:#111111;
+  --cream:#F6F4EF;
+  --c1:#7f77dd;
+  --c2:#d4537e;
+  --c3:#1d9e75;
+  --c4:#ef9f27;
+  --mid:#666560;
+  --light:#999999;
+}
+html,body{height:100%;}
+body{
+  background:var(--black);
+  font-family:'Inter',sans-serif;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:40px 24px;
+}
+
+/* ── LOGO SVG ── */
+.logo-wrap{margin-bottom:24px;}
+.logo-wrap svg{width:72px;height:72px;}
+
+/* ── WORDMARK ── */
+.wordmark{text-align:center;margin-bottom:8px;}
+.wordmark h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;
+  font-weight:700;
+  letter-spacing:0.14em;
+  color:var(--cream);
+  line-height:1;
+}
+.wordmark span{
+  font-family:'Inter',sans-serif;
+  font-size:10px;
+  letter-spacing:0.4em;
+  text-transform:uppercase;
+  color:var(--light);
+  display:block;
+  margin-top:6px;
+}
+
+/* ── TAGLINE ── */
+.tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:14px;
+  font-style:italic;
+  color:var(--light);
+  text-align:center;
+  margin-bottom:36px;
+  letter-spacing:0.04em;
+}
+
+/* ── SEPARADOR ── */
+.sep{
+  display:flex;
+  width:48px;
+  height:2px;
+  margin:0 auto 36px;
+  overflow:hidden;
+}
+.sep span{flex:1;}
+.sep span:nth-child(1){background:var(--c1);}
+.sep span:nth-child(2){background:var(--c3);}
+.sep span:nth-child(3){background:var(--c4);}
+.sep span:nth-child(4){background:var(--c2);}
+
+/* ── LINKS ── */
+.links{width:100%;max-width:320px;display:flex;flex-direction:column;gap:12px;margin-bottom:40px;}
+
+.link-btn{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 20px;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:2px;
+  text-decoration:none;
+  color:var(--cream);
+  font-size:13px;
+  font-weight:400;
+  letter-spacing:0.04em;
+  transition:background 0.2s, border-color 0.2s;
+  background:rgba(255,255,255,0.03);
+}
+.link-btn:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.15);}
+.link-btn .icon{width:18px;height:18px;flex-shrink:0;opacity:0.7;}
+.link-btn .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-left:auto;}
+
+/* ── CONTACTO ── */
+.contact{text-align:center;}
+.contact a{
+  font-size:11px;
+  color:var(--light);
+  text-decoration:none;
+  letter-spacing:0.06em;
+}
+.contact a:hover{color:var(--cream);}
+
+/* ── FOOTER ── */
+.footer{
+  margin-top:auto;
+  padding-top:40px;
+  font-size:10px;
+  color:rgba(255,255,255,0.15);
+  letter-spacing:0.06em;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<!-- LOGO -->
+<div class="logo-wrap">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Círculo guía -->
+    <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <!-- Líneas X -->
+    <line x1="50" y1="50" x2="100" y2="100" stroke="#7f77dd" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="150" y1="50" x2="100" y2="100" stroke="#d4537e" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="50" y1="150" x2="100" y2="100" stroke="#1d9e75" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="150" y1="150" x2="100" y2="100" stroke="#ef9f27" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Punto central -->
+    <circle cx="100" cy="100" r="4" fill="rgba(246,244,239,0.6)"/>
+    <!-- Puntos de color -->
+    <circle cx="50" cy="50" r="6" fill="#7f77dd"/>
+    <circle cx="150" cy="50" r="6" fill="#d4537e"/>
+    <circle cx="50" cy="150" r="6" fill="#1d9e75"/>
+    <circle cx="150" cy="150" r="6" fill="#ef9f27"/>
+  </svg>
+</div>
+
+<!-- WORDMARK -->
+<div class="wordmark">
+  <h1>ORVA</h1>
+  <span>Studio</span>
+</div>
+
+<p class="tagline">origin to art.</p>
+
+<!-- SEPARADOR -->
+<div class="sep">
+  <span></span><span></span><span></span><span></span>
+</div>
+
+<!-- LINKS -->
+<div class="links">
+
+  <a class="link-btn" href="https://www.instagram.com/orva.studio/" target="_blank">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5"/>
+      <circle cx="12" cy="12" r="5"/>
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+    </svg>
+    Instagram
+    <span class="dot" style="background:#7f77dd"></span>
+  </a>
+
+  <a class="link-btn" href="https://www.facebook.com/profile.php?id=61590976497762" target="_blank">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </svg>
+    Facebook
+    <span class="dot" style="background:#1d9e75"></span>
+  </a>
+
+  <a class="link-btn" href="mailto:orvastudio.mx@gmail.com">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    orvastudio.mx@gmail.com
+    <span class="dot" style="background:#ef9f27"></span>
+  </a>
+
+
+  <a class="link-btn" href="https://wa.me/528130411162?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20sus%20servicios." target="_blank">
+    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.115 1.523 5.845L.057 23.547a.5.5 0 0 0 .609.61l5.753-1.457A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.52-5.16-1.427l-.36-.216-3.737.946.974-3.648-.235-.374A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+    </svg>
+    WhatsApp
+    <span class="dot" style="background:#1d9e75"></span>
+  </a>
+
+</div>
+
+<!-- CONTACTO -->
+<div class="contact">
+  <a href="mailto:orvastudio.mx@gmail.com">Monterrey, N.L. · México</a>
+</div>
+
+<div class="footer">ORVA Studio © 2026 · origin to art.</div>
+
+</body>
+</html>
